@@ -1510,6 +1510,233 @@
             .theme-toggle-wrap { display: none !important; }
             .sidebar-overlay { display: block; }
         }
+
+        /* ===== СОВЕТЫ ===== */
+        .tips-section {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        .tips-search-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--bg-panel);
+            border: 1px solid var(--border-gold);
+            border-radius: 6px;
+            padding: 0 16px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .tips-search-bar:focus-within {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .tips-search-icon {
+            width: 18px; height: 18px;
+            fill: none;
+            stroke: var(--text-muted);
+            stroke-width: 2;
+            stroke-linecap: round;
+            flex-shrink: 0;
+        }
+
+        .tips-search-bar input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 14px 0;
+            font-size: 1rem;
+            color: var(--text-main);
+            font-family: var(--font-body);
+        }
+
+        .tips-search-bar input::placeholder { color: var(--text-muted); }
+
+        .tips-filter-row {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .tips-filter-btn {
+            background: transparent;
+            border: 1px solid var(--border-gold);
+            color: var(--text-secondary);
+            padding: 7px 18px;
+            font-size: 0.84rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 999px;
+            transition: all 0.2s;
+        }
+
+        .tips-filter-btn:hover {
+            border-color: var(--text-secondary);
+            color: var(--text-main);
+        }
+
+        .tips-filter-btn.active {
+            background: var(--accent-gold);
+            color: var(--bg-main);
+            border-color: var(--accent-gold);
+        }
+
+        .tips-block-label {
+            font-family: var(--font-headers);
+            color: var(--text-muted);
+            font-size: 0.72rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .tips-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 14px;
+            margin-bottom: 32px;
+        }
+
+        .tip-card {
+            background: var(--bg-panel);
+            border: 1px solid var(--border-gold);
+            border-radius: 6px;
+            transition: border-color 0.2s;
+        }
+
+        .tip-card:hover { border-color: var(--text-secondary); }
+
+        .tip-card.tip-important {
+            border-left: 3px solid var(--accent-burgundy);
+            border-radius: 0 6px 6px 0;
+        }
+
+        .tip-card-head {
+            padding: 14px 16px 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .tip-card-title {
+            font-family: var(--font-headers);
+            color: var(--light-gold);
+            font-size: 0.95rem;
+            line-height: 1.4;
+            margin: 0;
+            flex: 1;
+        }
+
+        .tip-badge {
+            flex-shrink: 0;
+            font-size: 0.7rem;
+            padding: 3px 9px;
+            border-radius: 999px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+
+        .tip-badge-волны    { background: rgba(139,26,26,0.28); color: #D4756B; border: 1px solid rgba(139,26,26,0.5); }
+        .tip-badge-информация { background: rgba(212,175,55,0.12); color: var(--text-secondary); border: 1px solid var(--border-gold); }
+        .tip-badge-ставки   { background: rgba(130,100,30,0.28); color: #C9A96E; border: 1px solid rgba(180,130,50,0.35); }
+        .tip-badge-предметы { background: rgba(240,204,90,0.10); color: var(--light-gold); border: 1px solid rgba(240,204,90,0.22); }
+        .tip-badge-выживаемость { background: rgba(40,90,50,0.28); color: #6DB87A; border: 1px solid rgba(40,100,50,0.45); }
+
+        .tip-card-body { padding: 8px 16px 14px; }
+
+        .tip-preview {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        .tip-preview.expanded {
+            display: block;
+        }
+
+        .tip-expand-btn {
+            background: transparent;
+            border: none;
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            cursor: pointer;
+            padding: 6px 0 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-family: var(--font-body);
+            transition: color 0.2s;
+        }
+
+        .tip-expand-btn:hover { color: var(--light-gold); }
+
+        .tip-arrow { display: inline-block; transition: transform 0.2s; font-size: 0.7rem; }
+        .tip-arrow.up { transform: rotate(180deg); }
+
+        /* Справочники */
+        .tips-ref-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 14px;
+        }
+
+        .tip-ref-card {
+            background: rgba(14,3,3,0.45);
+            border: 1px solid rgba(212,175,55,0.09);
+            border-radius: 6px;
+            padding: 18px;
+        }
+
+        .tip-ref-title {
+            font-family: var(--font-headers);
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            margin-bottom: 14px;
+        }
+
+        .tip-ref-table { width: 100%; font-size: 0.84rem; border-collapse: collapse; }
+
+        .tip-ref-table td {
+            padding: 4px 0;
+            color: var(--text-secondary);
+            vertical-align: top;
+        }
+
+        .tip-ref-table td:first-child {
+            color: var(--text-main);
+            font-weight: 600;
+            padding-right: 18px;
+            white-space: nowrap;
+        }
+
+        .tips-empty {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-secondary);
+            border: 1px dashed var(--border-gold);
+            border-radius: 6px;
+        }
+
+        @media (max-width: 640px) {
+            .tips-cards-grid { grid-template-columns: 1fr; }
+            .tips-ref-grid   { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -1524,7 +1751,7 @@
             <button class="sidebar-nav-btn active" data-section="home">Главная</button>
             <button class="sidebar-nav-btn" data-section="solo">Закупы СОЛО</button>
             <button class="sidebar-nav-btn disabled" title="скоро...">Закупы ДУО</button>
-            <button class="sidebar-nav-btn disabled" title="скоро...">Советы</button>
+            <button class="sidebar-nav-btn" data-section="tips">Советы</button>
         </nav>
         <div class="sidebar-themes">
             <div class="sidebar-themes-title">Тема</div>
@@ -1583,7 +1810,7 @@
             <button class="nav-btn active" data-section="home">Главная</button>
             <button class="nav-btn" data-section="solo">Закупы СОЛО</button>
             <button class="nav-btn disabled" title="скоро...">Закупы ДУО</button>
-            <button class="nav-btn disabled" title="скоро...">Советы</button>
+            <button class="nav-btn" data-section="tips">Советы</button>
             <div class="theme-toggle-wrap">
                 <button class="theme-toggle-btn" id="theme-toggle-btn" title="Сменить тему">Темы</button>
                 <div class="theme-picker" id="theme-picker">
@@ -1692,6 +1919,77 @@
             </div>
         </div>
 
+        <!-- ===== СОВЕТЫ ===== -->
+        <div id="section-tips" class="page-section hidden">
+            <div class="tips-section">
+                <div class="tips-search-bar">
+                    <svg class="tips-search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" id="tips-search" placeholder="Найти совет...">
+                </div>
+                <div class="tips-filter-row" id="tips-filter-row">
+                    <button class="tips-filter-btn active" data-filter="all">Все</button>
+                    <button class="tips-filter-btn" data-filter="волны">Волны</button>
+                    <button class="tips-filter-btn" data-filter="информация">Информация</button>
+                    <button class="tips-filter-btn" data-filter="ставки">Ставки</button>
+                    <button class="tips-filter-btn" data-filter="предметы">Предметы</button>
+                    <button class="tips-filter-btn" data-filter="выживаемость">Выживаемость</button>
+                </div>
+                <div id="tips-important-block">
+                    <div class="tips-block-label">Важное</div>
+                    <div class="tips-cards-grid" id="tips-grid-important"></div>
+                </div>
+                <div id="tips-волны-block">
+                    <div class="tips-block-label">Волны</div>
+                    <div class="tips-cards-grid" id="tips-grid-волны"></div>
+                </div>
+                <div id="tips-информация-block">
+                    <div class="tips-block-label">Информация</div>
+                    <div class="tips-cards-grid" id="tips-grid-информация"></div>
+                </div>
+                <div id="tips-ставки-block">
+                    <div class="tips-block-label">Ставки</div>
+                    <div class="tips-cards-grid" id="tips-grid-ставки"></div>
+                </div>
+                <div id="tips-предметы-block">
+                    <div class="tips-block-label">Предметы</div>
+                    <div class="tips-cards-grid" id="tips-grid-предметы"></div>
+                </div>
+                <div id="tips-выживаемость-block">
+                    <div class="tips-block-label">Выживаемость</div>
+                    <div class="tips-cards-grid" id="tips-grid-выживаемость"></div>
+                </div>
+                <div id="tips-refs-block">
+                    <div class="tips-block-label">Справочники</div>
+                    <div class="tips-ref-grid">
+                        <div class="tip-ref-card">
+                            <div class="tip-ref-title">Стоимость прокачки брони</div>
+                            <table class="tip-ref-table">
+                                <tr><td>ЗЩ1</td><td>250 / ЗОС: 325</td></tr>
+                                <tr><td>ЗЩ2</td><td>500 / ЗОС: 650</td></tr>
+                                <tr><td>ЗЩ3</td><td>750 / ЗОС: 975</td></tr>
+                                <tr><td>ЗЩ4 (1 эл.)</td><td>2 500 / ЗОС: 3 250</td></tr>
+                                <tr><td>ЗЩ5 (1 эл.)</td><td>4 000 / ЗОС: 5 125</td></tr>
+                                <tr><td>Полная броня</td><td>16 000 / ЗОС: 20 500</td></tr>
+                            </table>
+                        </div>
+                        <div class="tip-ref-card">
+                            <div class="tip-ref-title">Процент защиты сетов</div>
+                            <table class="tip-ref-table">
+                                <tr><td>Алмазный шлем</td><td>15%</td></tr>
+                                <tr><td>Алмазный нагрудник</td><td>40%</td></tr>
+                                <tr><td>Алмазные поножи</td><td>30%</td></tr>
+                                <tr><td>Алмазные ботинки</td><td>15%</td></tr>
+                                <tr><td>Итого (алм.)</td><td>100%</td></tr>
+                                <tr><td>Итого (железо)</td><td>75%</td></tr>
+                                <tr><td>Золотой / кольчужный шлем</td><td>10% (как железный)</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="tips-empty" id="tips-empty" style="display:none">Советы не найдены</div>
+            </div>
+        </div>
+
         <!-- ===== ЗАКУПЫ СОЛО ===== -->
         <div id="section-solo" class="page-section hidden">
             <section class="section-container">
@@ -1789,6 +2087,8 @@
         const GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTJUnezlHjqNTBs6LlMvoDxvg8KyigoOZ5qQ-WJgTi7Hu_5yeiUJ2o55wwzWsprCdKElWeiyutCzrs5/pub?gid=801491780&single=true&output=csv";
         const YOUTUBE_RSS_URL = "https://www.youtube.com/feeds/videos.xml?channel_id=UCRqlmyX3IOT0QCXyHr_tW3g";
         const STICKERS_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTJUnezlHjqNTBs6LlMvoDxvg8KyigoOZ5qQ-WJgTi7Hu_5yeiUJ2o55wwzWsprCdKElWeiyutCzrs5/pub?gid=1190181864&single=true&output=csv";
+        // Вставьте URL листа "Советы" из Google Таблицы (Файл → Поделиться → Опубликовать → CSV → нужный лист)
+        const TIPS_SHEET_CSV_URL = "";
 
         let currentClasses = [];
         let selectedClassId = null;
@@ -1815,14 +2115,260 @@
 
         const sectionHome = document.getElementById('section-home');
         const sectionSolo = document.getElementById('section-solo');
+        const sectionTips = document.getElementById('section-tips');
         const navBtns = document.querySelectorAll('.nav-btn[data-section]');
 
         function switchNavTab(name) {
             navBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.section === name));
             sectionHome.classList.toggle('hidden', name !== 'home');
             sectionSolo.classList.toggle('hidden', name !== 'solo');
+            sectionTips.classList.toggle('hidden', name !== 'tips');
             if (name !== 'solo') closePanel();
         }
+
+        /* ===== СОВЕТЫ: резервные данные (используются если таблица не настроена) ===== */
+        const TIPS_FALLBACK = [
+            {
+                category: 'предметы',
+                title: 'Сборка для высоких волн от Лингидана',
+                important: true,
+                content: 'Сборка для прохождения высоких волн (Без пуша)\n\nТяжёлые предметы:\n1. Мидас\n2. Секира (криты)\n3. Боевое кольцо (криты)\n4. Мракобесец/Гибельник (буст к урону по мобам)\n5. Шлем ледяного короля (стакается с зельем замедления)\n6. Стальные ботинки\n\nМидас можно менять на часы или другой предмет по ситуации для дуэли\n\nОбязательно иметь:\n1. Топ меч (или меч на бич + кару)\n2. Замедление\n3. Щиты 2–3\n4. Огнестойкость\n5. Зелье регенерации'
+            },
+            {
+                category: 'предметы',
+                title: 'Меч богов — когда нельзя брать',
+                important: true,
+                content: 'Нельзя брать без фулл ЗЩ5 и возможности восстанавливать HP (реген или хилки)\n\nЕсли вы не ПРО — лучше потратить деньги на книги и предметы\n\nЕсли в игре есть топер — запрещено покупать. Топеры иногда делают такие фокусы, что отлетаешь за секунду\n\nЕсли выпал с нуба, но следующая дуэль 99% проигрышная — лучше выкинуть в мусорку\n\nСначала убивай игрока с топ мечами, потом его союзника — иначе мечи не выпадут'
+            },
+            {
+                category: 'волны',
+                title: 'Отравление',
+                content: 'Если на открытой карте не хочешь подпускать противника на луке — не используй предметы на отравление (зелье/стрела)\n\nЗелье отравления контрит замедление — сильно заметно на алхимике: волки и поборники становятся только быстрее\n\nВАЖНО: не использовать отравление на голема'
+            },
+            {
+                category: 'волны',
+                title: 'Скелеты-лучники',
+                content: 'На поздних этапах бить их мечом опасно — лучше бегать по кругу вокруг них, чтобы они сами друг друга убили\n\nВ конце аккуратно добить оставшихся луком или щитом\n\n(Если у вас будет связка, то волна пройдётся без проблем)'
+            },
+            {
+                category: 'волны',
+                title: 'Адский легион (ифриты)',
+                content: 'Собирай ифритов в один угол и бей их там\n\nЭто экономит много времени по сравнению с погоней за каждым отдельным ифритом по всей карте'
+            },
+            {
+                category: 'волны',
+                title: 'Криперы',
+                content: 'Их можно законтрить щитом\n\nЛучше убивать крипера мидасом — если взорвётся, денег не получишь'
+            },
+            {
+                category: 'информация',
+                title: 'Про прокачку',
+                content: 'Меч: первое улучшение даёт +1 ур., последующие по +0.5. Первую прокачку делать рекомендую всегда и сразу\n\nБроня: прокачка на любом этапе даёт +4% к защите\n(фулл алм ЗЩ5 даёт 180%)'
+            },
+            {
+                category: 'информация',
+                title: 'Зачарования: Бич членистоногих / Небесная кара',
+                content: 'Увеличивают урон на 2.5 за каждый уровень:\n- Уровень 2: +5 урона\n- Уровень 4: +10 урона\n- Уровень 6: +15 урона\n- Уровень 8: +20 урона\n- Уровень 10: +25 урона\n\nУ "Бича членистоногих" есть дополнительное свойство — оглушение:\n1 уровень — 1 секунда, каждый последующий +0.5 сек\n\n(По крайней мере так указано в официальных источниках. На Кристаликсе не факт, что увеличивается)'
+            },
+            {
+                category: 'информация',
+                title: 'По волнам в командных режимах',
+                content: 'В командных режимах не забывай брать зелье моментального урона и взрывную хилку\n\nНа высоких уровнях это очень упростит агрессию мобов'
+            },
+            {
+                category: 'информация',
+                title: 'Мидас',
+                content: 'Не стоит продавать мидас до самого окончания игры\n\nПеред дуэлью убирай его в стеш, а на волнах доставай\n\nПо началу будет непривычно и можно забывать, но так ты заработаешь больше денег'
+            },
+            {
+                category: 'информация',
+                title: 'Плавная анимация приседания (SHIFT)',
+                content: 'Чтобы сделать плавную анимацию приседания на SHIFT — нужно включить в настройках:\n\nНастройки → Управление → Smooth Camera Movement'
+            },
+            {
+                category: 'ставки',
+                title: 'Ставки = зло',
+                content: 'Играйте без них\n\nА если и ставите — смотрите рейтинг в начале и НИКОГДА не ставьте против топеров'
+            },
+            {
+                category: 'ставки',
+                title: 'Признаки: на кого не ставить',
+                content: 'Признаки, по которым не стоит ставить большие деньги на игрока:\n1. Качает меч без чар выше 3 уровня\n2. Не использует бинды\n3. Купил шар HP и/или сумку призывателя (артефакт нечисти)\n4. Не купил мидас\n5. Слил HP на слабой волне или долго проходит волны\n6. Использует много мата и оскорблений\n\nСильные игроки в 80–90% случаев предпочитают промолчать, а токсики сливаются чуть позже голема\n\nБонус: следи за табом — иногда в дуэль попадает игрок, который вылетел (его скин подсвечен красным). В таком случае ставь только сейв\n\nБонус: смотри рейтинг перед началом. Против топеров — без больших сумм'
+            },
+            {
+                category: 'предметы',
+                title: 'Классы — случайный выбор',
+                content: 'Если в выборе нет ни одного интересного класса и планируешь ливнуть — попробуй нажать кнопку случайного выбора\n\nОна выбирает случайный класс из незабаненных и открытых у тебя. Бонусом получаешь 6 супчиков вместо 3'
+            },
+            {
+                category: 'предметы',
+                title: 'Ответ на "лукодрочер"',
+                content: 'Если пишут "ты лукодрочер и без лука полный ноль":\n\n"Да, я без лука 0 — правда ты и с луком в руках ничего не стоишь"\n\nЧасто так оскорбляют те, у кого очевидное преимущество в ближнем бою. Этим оскорблением они пытаются заставить тебя играть по их правилам и проиграть\n\nКогда против тебя мастер оружия (с критами), а инвентари одинаковы — вступать в ближний бой не всегда имеет смысл'
+            },
+            {
+                category: 'предметы',
+                title: 'Персонализация в дуо',
+                content: 'В дуо стоит использовать персонализацию "тюремная клетка"\n\nЗа счёт прутьев расстояние между тобой и союзником меньше — удобно обмениваться зельями без потери времени действия'
+            },
+            {
+                category: 'выживаемость',
+                title: 'Приоритет: броня',
+                content: 'Отдавай приоритет прокачке брони\n\nПрокачка на любом этапе даёт +4% к защите (фулл алм ЗЩ5 — 180%)\n\nМеч: первое улучшение +1 ур., последующие +0.5 — первую прокачку делать сразу'
+            },
+            {
+                category: 'выживаемость',
+                title: 'Элемент на шипы',
+                content: 'Необходим хотя бы один элемент на шипы\n\nСобирать больше двух элементов на ЗОС не стоит — точной информации о стакании нет\n(К тому же это дорого)'
+            },
+            {
+                category: 'выживаемость',
+                title: 'Порядок действий по брони',
+                content: '0. Покупаем мидас\n1. Ждём алмазный элемент на шипы\n2. Равномерно прокачиваем всю броню\n\nВ идеале иметь ЗЩ5 до 25–30 волны, после чего начинаем покупать тяжёлые предметы'
+            }
+        ];
+
+        /* ===== СОВЕТЫ: загрузка и рендер ===== */
+        const VALID_TIPS_CATS = new Set(['волны','информация','ставки','предметы','выживаемость']);
+        let tipsActiveFilter = 'all';
+        let tipsSearchQuery  = '';
+
+        function loadTipsData() {
+            // Показываем резервные данные мгновенно
+            let cached = null;
+            try { cached = JSON.parse(localStorage.getItem('csk_tips_data_v1')); } catch {}
+            renderTipsSection(cached || TIPS_FALLBACK);
+            // Загружаем свежие данные в фоне
+            fetchTipsData(true);
+        }
+
+        async function fetchTipsData(isBackground = false) {
+            if (!isBackground) showStatus('Загрузка советов...', 'status-loading');
+            try {
+                let data = null;
+
+                // 1. Приоритет: Google Sheets CSV (если задан URL)
+                if (TIPS_SHEET_CSV_URL) {
+                    const resp = await fetch(TIPS_SHEET_CSV_URL + '&nocache=' + Date.now());
+                    if (resp.ok) {
+                        const rows = parseCSV(await resp.text()).slice(1);
+                        const parsed = rows
+                            .filter(r => VALID_TIPS_CATS.has((r[0]||'').trim().toLowerCase()) && (r[1]||'').trim() && (r[2]||'').trim())
+                            .map(r => ({
+                                category:  r[0].trim().toLowerCase(),
+                                title:     r[1].trim(),
+                                content:   r[2].trim(),
+                                important: (r[3]||'').trim().toLowerCase() === 'да'
+                            }));
+                        if (parsed.length > 0) data = parsed;
+                    }
+                }
+
+                // 2. Запасной вариант: локальный data/tips.json
+                if (!data) {
+                    const resp = await fetch('./data/tips.json?nocache=' + Date.now());
+                    if (resp.ok) data = await resp.json();
+                }
+
+                if (data && data.length > 0) {
+                    localStorage.setItem('csk_tips_data_v1', JSON.stringify(data));
+                    renderTipsSection(data);
+                    if (!isBackground) showStatus('Советы обновлены! (' + data.length + ' шт.)', 'status-success');
+                } else if (!isBackground) {
+                    showStatus('Нет данных для советов', 'status-error');
+                }
+            } catch (e) {
+                console.warn('Tips fetch failed:', e);
+                if (!isBackground) showStatus('Ошибка советов: ' + e.message, 'status-error');
+            }
+        }
+
+        function renderTipsSection(data) {
+            ['important','волны','информация','ставки','предметы','выживаемость'].forEach(k => {
+                const el = document.getElementById('tips-grid-' + k);
+                if (el) el.innerHTML = '';
+            });
+            data.forEach(tip => {
+                if (tip.important) document.getElementById('tips-grid-important').appendChild(buildTipCard(tip));
+                const grid = document.getElementById('tips-grid-' + tip.category);
+                if (grid) grid.appendChild(buildTipCard(tip));
+            });
+            applyTipsFilters();
+        }
+
+        function buildTipCard(tip) {
+            const card = document.createElement('div');
+            card.className = 'tip-card' + (tip.important ? ' tip-important' : '');
+            card.dataset.category = tip.category;
+            card.dataset.title    = tip.title.toLowerCase();
+            card.dataset.content  = tip.content.toLowerCase();
+            const needsExpand = tip.content.split('\n').length > 4 || tip.content.length > 200;
+            card.innerHTML =
+                '<div class="tip-card-head">' +
+                    '<h3 class="tip-card-title">' + escHtml(tip.title) + '</h3>' +
+                    '<span class="tip-badge tip-badge-' + tip.category + '">' + cap(tip.category) + '</span>' +
+                '</div>' +
+                '<div class="tip-card-body">' +
+                    '<div class="tip-preview">' + escHtml(tip.content) + '</div>' +
+                    (needsExpand ? '<button class="tip-expand-btn"><span class="tip-arrow">▼</span> показать полностью</button>' : '') +
+                '</div>';
+            if (needsExpand) {
+                card.querySelector('.tip-expand-btn').addEventListener('click', function() {
+                    const preview  = card.querySelector('.tip-preview');
+                    const arrow    = this.querySelector('.tip-arrow');
+                    const expanded = preview.classList.toggle('expanded');
+                    arrow.classList.toggle('up', expanded);
+                    this.childNodes[1].textContent = expanded ? ' свернуть' : ' показать полностью';
+                });
+            }
+            return card;
+        }
+
+        function cap(s)     { return s.charAt(0).toUpperCase() + s.slice(1); }
+        function escHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+        function applyTipsFilters() {
+            const blockKeys = ['important','волны','информация','ставки','предметы','выживаемость','refs'];
+            let totalVisible = 0;
+            blockKeys.forEach(key => {
+                const block = document.getElementById('tips-' + key + '-block');
+                if (!block) return;
+                if (key === 'refs') {
+                    block.style.display = (tipsActiveFilter === 'all' || tipsActiveFilter === 'выживаемость') && !tipsSearchQuery ? '' : 'none';
+                    return;
+                }
+                if (key === 'important') {
+                    block.style.display = tipsActiveFilter === 'all' && !tipsSearchQuery ? '' : 'none';
+                    return;
+                }
+                let visible = 0;
+                block.querySelectorAll('.tip-card').forEach(card => {
+                    const show = (tipsActiveFilter === 'all' || card.dataset.category === tipsActiveFilter)
+                              && (!tipsSearchQuery || card.dataset.title.includes(tipsSearchQuery) || card.dataset.content.includes(tipsSearchQuery));
+                    card.style.display = show ? '' : 'none';
+                    if (show) visible++;
+                });
+                block.style.display = visible > 0 ? '' : 'none';
+                totalVisible += visible;
+            });
+            document.getElementById('tips-empty').style.display = totalVisible === 0 ? 'block' : 'none';
+        }
+
+        function initTipsSection() {
+            document.querySelectorAll('.tips-filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.tips-filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    tipsActiveFilter = btn.dataset.filter;
+                    applyTipsFilters();
+                });
+            });
+            document.getElementById('tips-search').addEventListener('input', function() {
+                tipsSearchQuery = this.value.toLowerCase().trim();
+                applyTipsFilters();
+            });
+            loadTipsData();
+        }
+
 
         document.addEventListener('DOMContentLoaded', () => {
             navBtns.forEach(btn => {
@@ -1833,6 +2379,7 @@
             fetchLatestYoutubeVideo();
             initEventListeners();
             initTiltEffect();
+            initTipsSection();
         });
 
         function loadClassesData() {
@@ -2044,7 +2591,7 @@
                 }
             });
 
-            syncNowBtn.addEventListener('click', () => { fetchSheetsData(false); fetchStickersData(false); });
+            syncNowBtn.addEventListener('click', () => { fetchSheetsData(false); fetchStickersData(false); fetchTipsData(false); });
         }
 
         function showStatus(text, className) {
