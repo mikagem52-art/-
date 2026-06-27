@@ -1388,10 +1388,12 @@
             background: rgba(0,0,0,0.6);
             z-index: 200;
             opacity: 0;
+            pointer-events: none;
             transition: opacity 0.3s;
         }
         .sidebar-overlay.open {
             opacity: 1;
+            pointer-events: auto;
         }
 
         .mobile-sidebar {
